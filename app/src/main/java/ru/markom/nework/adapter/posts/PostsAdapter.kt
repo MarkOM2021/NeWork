@@ -19,7 +19,7 @@ import ru.markom.nework.dto.PostResponse
 import ru.markom.nework.enumeration.AttachmentType.*
 import ru.markom.nework.fragment.DisplayingImagesFragment.Companion.textArg
 import ru.markom.nework.fragment.FeedFragment.Companion.intArg
-import ru.markom.nework.fragment.MapsFragment.Companion.pointArg
+import ru.markom.nework.fragment.MapFragment.Companion.pointArg
 import ru.markom.nework.util.GoDataTime
 
 interface OnInteractionListener {

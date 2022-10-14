@@ -26,7 +26,7 @@
             app:destination="@id/listOfMentions" />
         <action
             android:id="@+id/action_feedFragment_to_mapsFragment"
-            app:destination="@id/mapsFragment" />
+            app:destination="@id/mapFragment" />
         <action
             android:id="@+id/action_feedFragment_to_openPostFragment2"
             app:destination="@id/PostPreviewFragment" />
@@ -59,7 +59,7 @@
             app:destination="@id/listOfUsers" />
         <action
             android:id="@+id/action_newPostFragment_to_mapsFragment"
-            app:destination="@id/mapsFragment" />
+            app:destination="@id/mapFragment" />
     </fragment>
     <dialog
         android:id="@+id/listOfUsers"
@@ -73,7 +73,7 @@
         tools:layout="@layout/fragment_new_event" >
         <action
             android:id="@+id/action_newEventFragment_to_mapsFragment"
-            app:destination="@id/mapsFragment" />
+            app:destination="@id/mapFragment" />
         <action
             android:id="@+id/action_newEventFragment_to_listOfUsersAddInEvent"
             app:destination="@id/listOfUsersAddInEvent" />
@@ -84,8 +84,8 @@
         android:label="fragment_new_job"
         tools:layout="@layout/fragment_new_job" />
     <fragment
-        android:id="@+id/mapsFragment"
-        android:name="ru.markom.nework.fragment.MapsFragment"
+        android:id="@+id/mapFragment"
+        android:name="ru.markom.nework.fragment.MapFragment"
         android:label="MapsFragment"
         tools:layout="@layout/fragment_maps">
         <action

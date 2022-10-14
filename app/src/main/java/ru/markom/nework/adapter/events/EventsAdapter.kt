@@ -20,7 +20,7 @@ import ru.markom.nework.enumeration.AttachmentType
 import ru.markom.nework.enumeration.EventType.*
 import ru.markom.nework.fragment.DisplayingImagesFragment.Companion.textArg
 import ru.markom.nework.fragment.FeedFragment.Companion.intArg
-import ru.markom.nework.fragment.MapsFragment.Companion.pointArg
+import ru.markom.nework.fragment.MapFragment.Companion.pointArg
 import ru.markom.nework.util.GoDataTime
 
 interface EventCallback {
@@ -158,7 +158,7 @@ class EventViewHolder(
 
             geo.setOnClickListener { view ->
                 view.findNavController().navigate(
-                    R.id.mapsFragment,
+                    R.id.mapFragment,
                     Bundle().apply {
                         Point(
                             event.coords?.lat!!.toDouble(), event.coords.long.toDouble()

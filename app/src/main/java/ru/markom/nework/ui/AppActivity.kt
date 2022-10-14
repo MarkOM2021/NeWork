@@ -30,6 +30,7 @@ import javax.inject.Inject
 @AndroidEntryPoint
 class AppActivity : AppCompatActivity() {
     private val viewModel: AuthViewModel by viewModels()
+
     @OptIn(ExperimentalCoroutinesApi::class)
     private val wallPostViewModel: MyWallPostViewModel by viewModels()
 
@@ -43,7 +44,7 @@ class AppActivity : AppCompatActivity() {
     lateinit var googleApiAvailability: GoogleApiAvailability
 
     companion object {
-        private const val MAPKIT_API_KEY = "e0f40ead-fefb-45cf-821c-37efc0eaa548"
+        private const val MAPKIT_API_KEY = "c3e8cdf8-5cf9-4f1f-9c26-a37a7a4488bd"
     }
 
     lateinit var binding: ActivityAppBinding

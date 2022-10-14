@@ -21,7 +21,7 @@ import ru.markom.nework.databinding.FragmentOpenPostBinding
 import ru.markom.nework.enumeration.AttachmentType
 import ru.markom.nework.fragment.DisplayingImagesFragment.Companion.textArg
 import ru.markom.nework.fragment.FeedFragment.Companion.intArg
-import ru.markom.nework.fragment.MapsFragment.Companion.pointArg
+import ru.markom.nework.fragment.MapFragment.Companion.pointArg
 import ru.markom.nework.util.GoDataTime
 import ru.markom.nework.viewmodel.AuthViewModel
 import ru.markom.nework.viewmodel.PostViewModel
@@ -196,7 +196,7 @@ class PostPreviewFragment : Fragment() {
 
                     geo.setOnClickListener { view ->
                         view.findNavController().navigate(
-                            R.id.mapsFragment,
+                            R.id.mapFragment,
                             Bundle().apply {
                                 Point(
                                     post.coords?.lat!!.toDouble(), post.coords.long.toDouble()

@@ -154,7 +154,7 @@ class EventFragment : Fragment() {
         adapter.loadStateFlow
         lifecycleScope.launchWhenCreated {
             adapter.loadStateFlow.collectLatest {
-                binding.swiperefresh.isRefreshing = it.refresh is LoadState.Loading
+                binding.swipeRefresh.isRefreshing = it.refresh is LoadState.Loading
             }
         }
 
@@ -162,7 +162,7 @@ class EventFragment : Fragment() {
             findNavController().navigate(R.id.action_eventFragment_to_newEventFragment)
         }
 
-        binding.swiperefresh.setOnRefreshListener {
+        binding.swipeRefresh.setOnRefreshListener {
             adapter.refresh()
         }
 

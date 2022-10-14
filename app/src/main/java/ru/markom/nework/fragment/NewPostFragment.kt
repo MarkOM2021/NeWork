@@ -30,7 +30,7 @@ import ru.markom.nework.adapter.ListUsersIdAdapter
 import ru.markom.nework.databinding.FragmentNewPostBinding
 import ru.markom.nework.fragment.DisplayingImagesFragment.Companion.textArg
 import ru.markom.nework.fragment.FeedFragment.Companion.intArg
-import ru.markom.nework.fragment.MapsFragment.Companion.pointArg
+import ru.markom.nework.fragment.MapFragment.Companion.pointArg
 import ru.markom.nework.viewmodel.NewPostViewModel
 
 @ExperimentalCoroutinesApi

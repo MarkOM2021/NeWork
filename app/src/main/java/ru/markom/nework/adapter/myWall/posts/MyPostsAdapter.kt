@@ -23,7 +23,7 @@ import ru.markom.nework.dto.PostResponse
 import ru.markom.nework.enumeration.AttachmentType
 import ru.markom.nework.fragment.DisplayingImagesFragment.Companion.textArg
 import ru.markom.nework.fragment.FeedFragment.Companion.intArg
-import ru.markom.nework.fragment.MapsFragment.Companion.pointArg
+import ru.markom.nework.fragment.MapFragment.Companion.pointArg
 import ru.markom.nework.util.GoDataTime
 
 interface MyWallOnInteractionListener {
@@ -148,7 +148,7 @@ class MyWallPostViewHolder(
                     Bundle().apply { intArg = post.id })
             }
             geo.setOnClickListener { view ->
-                view.findNavController().navigate(R.id.mapsFragment,
+                view.findNavController().navigate(R.id.mapFragment,
                     Bundle().apply {
                         Point(
                             post.coords?.lat!!.toDouble(), post.coords.long.toDouble()

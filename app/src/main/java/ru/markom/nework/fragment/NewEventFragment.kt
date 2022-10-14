@@ -33,7 +33,7 @@ import ru.markom.nework.databinding.FragmentNewEventBinding
 import ru.markom.nework.enumeration.EventType
 import ru.markom.nework.fragment.DisplayingImagesFragment.Companion.textArg
 import ru.markom.nework.fragment.FeedFragment.Companion.intArg
-import ru.markom.nework.fragment.MapsFragment.Companion.pointArg
+import ru.markom.nework.fragment.MapFragment.Companion.pointArg
 import ru.markom.nework.util.GoDataTime
 import ru.markom.nework.viewmodel.NewEventViewModel
 import java.util.*

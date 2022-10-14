@@ -2,15 +2,15 @@
   "data": [
     {
       "id": 1,
-      "author": "Александр Петров",
+      "author": "Марк Марков",
       "authorAvatar": "@sample/posts_avatars",
-      "published": "21 мая в 18:36",
-      "content": "Привет, это новая Нетология! бежать быстрее. Наша миссия — помочь встать на путь роста и начать цепочку перемен → http://netolo.gy/fyb",
-      "link": "http://netolo.gy/fyb",
+      "published": "1 октября в 13:01",
+      "content": "Всем привет! А вот и Я!",
+      "link": "https://vk.com/id83172328",
       "likedByMe": true,
-      "likes": 100,
-      "nameOrganization": "Яндекс",
-      "position": "Разнорабочий",
+      "likes": 5,
+      "nameOrganization": "MarkO'M",
+      "position": "Звукооператор",
       "dateTime": "10 июля 2022 года"
     }
   ]
