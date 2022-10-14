@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "318615457566",
+    "project_id": "nework-8483a",
+    "storage_bucket": "nework-8483a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:318615457566:android:4c4940aae512aa79bb830f",
+        "android_client_info": {
+          "package_name": "ru.markom.nework"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "318615457566-i9qe9d3hm04qcefpl00bn7r3nuke2otr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB5HI4rF2taa9dUqu7IZ6q8jMnVYlFWd2k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "318615457566-i9qe9d3hm04qcefpl00bn7r3nuke2otr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
