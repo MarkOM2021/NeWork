@@ -1,3 +1,5 @@
+@file:Suppress("NAME_SHADOWING")
+
 package ru.markom.nework.util
 
 import android.annotation.SuppressLint
@@ -6,7 +8,7 @@ import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
 @SuppressLint("NewApi")
-object GoDataTime {
+object DataConverter {
     fun convertDataTime(dateTime: String): String {
         return if (dateTime == "") {
             ""
@@ -47,9 +49,7 @@ object GoDataTime {
         val newDate = "$day.$month.$year"
         val formatter = SimpleDateFormat("dd.MM.yyyy")
         val date = formatter.parse(newDate)
-
         val sdf = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.sss'Z'")
-
         return sdf.format(date!!)
     }
 
@@ -81,7 +81,6 @@ object GoDataTime {
             in 1..9 -> "0$m"
             else -> "$m"
         }
-
         val newDate = "$day.$month.$year $hour:$minute"
         val formatter = SimpleDateFormat("dd.MM.yyyy HH:mm")
         val date = formatter.parse(newDate)

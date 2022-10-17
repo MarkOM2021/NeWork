@@ -39,7 +39,7 @@ class AuthenticationFragment : DialogFragment() {
         enter.setOnClickListener {
             val usernameEditText = binding.username.text.toString()
             val passwordEditText = binding.password.text.toString()
-            if (usernameEditText=="" || passwordEditText==""){
+            if (usernameEditText == "" || passwordEditText == "") {
                 Snackbar.make(binding.root, R.string.All_fields, Snackbar.LENGTH_SHORT).show()
             } else {
                 val userResponse = UserResponse(usernameEditText, passwordEditText)
@@ -57,8 +57,4 @@ class AuthenticationFragment : DialogFragment() {
         return binding.root
 
     }
-
-
-
-
 }

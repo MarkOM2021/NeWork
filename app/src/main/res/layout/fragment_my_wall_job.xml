@@ -43,7 +43,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@mipmap/ic_launcher_logo"
+                app:srcCompat="@drawable/ic_no_avatar_48"
                 tools:srcCompat="@tools:sample/avatars" />
 
             <TextView
@@ -67,7 +67,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/common_spacing"
                 android:contentDescription="@string/description_post_menu"
-                app:icon="@drawable/ic_arrow_circle_left_24"
+                app:icon="@drawable/ic_home_24"
                 app:layout_constraintEnd_toStartOf="@id/menu"
                 app:layout_constraintStart_toEndOf="@id/nameUser"
                 app:layout_constraintTop_toTopOf="parent"

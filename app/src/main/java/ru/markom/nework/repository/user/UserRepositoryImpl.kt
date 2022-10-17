@@ -14,8 +14,8 @@ import javax.inject.Inject
 
 class UserRepositoryImpl @Inject constructor(
     private val apiService: ApiService,
-    private  val appAuth: AppAuth
-): UserRepository {
+    private val appAuth: AppAuth
+) : UserRepository {
 
     override suspend fun onSignIn(userResponse: UserResponse) {
         try {
@@ -32,7 +32,7 @@ class UserRepositoryImpl @Inject constructor(
             }
             val avatarUser = responseUser.body()?.avatar
             val name = responseUser.body()?.name
-            appAuth.setAuth(authState.id, token, avatarUser,name)
+            appAuth.setAuth(authState.id, token, avatarUser, name)
         } catch (e: IOException) {
             throw NetworkError
         }
@@ -46,7 +46,8 @@ class UserRepositoryImpl @Inject constructor(
             val response = if (user.file != null) {
                 apiService.onSignUpHasAva(login, password, nameUser, user.file)
             } else {
-                    apiService.onSignUpNoAva(user.login, user.password, user.name, user.file)}
+                apiService.onSignUpNoAva(user.login, user.password, user.name, null)
+            }
             if (!response.isSuccessful) {
                 throw ApiError(response.code(), response.message())
             }
@@ -60,12 +61,11 @@ class UserRepositoryImpl @Inject constructor(
             }
             val avatarUser = responseUser.body()?.avatar
             val name = responseUser.body()?.name
-            appAuth.setAuth(authState.id, token, avatarUser,name)
+            appAuth.setAuth(authState.id, token, avatarUser, name)
         } catch (e: IOException) {
             throw NetworkError
         } catch (e: Exception) {
             throw UnknownError
         }
     }
-
 }

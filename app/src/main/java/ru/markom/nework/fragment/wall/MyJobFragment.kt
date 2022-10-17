@@ -47,8 +47,8 @@ class MyJobFragment : Fragment() {
             binding.nameUser.text = it.nameUser
             Glide.with(this@MyJobFragment)
                 .load(it.avatarUser)
-                .error(R.drawable.ic_avatar_loading_error_48)
-                .placeholder(R.drawable.ic_baseline_cruelty_free_48)
+                .error(R.drawable.ic_no_avatar_48)
+                .placeholder(R.drawable.ic_no_user_48)
                 .timeout(15_000)
                 .circleCrop()
                 .into(binding.avatar)

@@ -34,9 +34,7 @@ class RegistrationFragment : DialogFragment() {
         savedInstanceState: Bundle?
     ): View {
         val binding = FragmentRegistrationBinding.inflate(inflater, container, false)
-
         var file: MultipartBody.Part? = null
-
         val enter = binding.enter
 
         enter.setOnClickListener {
@@ -103,7 +101,7 @@ class RegistrationFragment : DialogFragment() {
         }
 
         binding.deleteImage.setOnClickListener {
-            binding.avatar.setImageResource(R.mipmap.ic_launcher)
+            binding.avatar.setImageResource(R.drawable.ic_no_avatar_48)
         }
 
         viewModel.data.observeForever {

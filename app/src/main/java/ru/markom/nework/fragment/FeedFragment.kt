@@ -23,7 +23,7 @@ import ru.markom.nework.adapter.posts.PagingLoadStateAdapter
 import ru.markom.nework.adapter.posts.PostsAdapter
 import ru.markom.nework.databinding.FragmentFeedBinding
 import ru.markom.nework.dto.PostResponse
-import ru.markom.nework.fragment.DisplayingImagesFragment.Companion.textArg
+import ru.markom.nework.fragment.ImageFragment.Companion.textArg
 import ru.markom.nework.util.IntArg
 import ru.markom.nework.viewmodel.AuthViewModel
 import ru.markom.nework.viewmodel.PostViewModel
@@ -41,7 +41,9 @@ class FeedFragment : Fragment() {
         val binding = FragmentFeedBinding.inflate(inflater, container, false)
 
         authViewModel.data.observeForever {
-            if (!authViewModel.authenticated) {binding.fab.visibility = View.GONE} else {
+            if (!authViewModel.authenticated) {
+                binding.fab.visibility = View.GONE
+            } else {
                 binding.fab.visibility = View.VISIBLE
             }
         }
@@ -59,12 +61,17 @@ class FeedFragment : Fragment() {
                     findNavController().navigate(R.id.action_feedFragment_to_authenticationFragment)
                 }
             }
+
             override fun onEdit(post: PostResponse) {
-                findNavController().navigate(R.id.action_feedFragment_to_newPostFragment,Bundle().apply { intArg = post.id })
+                findNavController().navigate(
+                    R.id.action_feedFragment_to_newPostFragment,
+                    Bundle().apply { intArg = post.id })
             }
+
             override fun onRemove(post: PostResponse) {
                 viewModel.removeById(post.id)
             }
+
             override fun onShare(post: PostResponse) {
                 if (authViewModel.authenticated) {
                     val intent = Intent().apply {
@@ -81,10 +88,12 @@ class FeedFragment : Fragment() {
                     findNavController().navigate(R.id.action_feedFragment_to_authenticationFragment)
                 }
             }
+
             override fun loadingTheListOfMentioned(post: PostResponse) {
                 if (authViewModel.authenticated) {
-                    if (post.mentionIds.isEmpty()){
-                        Snackbar.make(binding.root, R.string.mention_anyone, Snackbar.LENGTH_SHORT).show()
+                    if (post.mentionIds.isEmpty()) {
+                        Snackbar.make(binding.root, R.string.mention_anyone, Snackbar.LENGTH_SHORT)
+                            .show()
                     } else {
                         viewModel.loadUsersMentions(post.mentionIds)
                         findNavController().navigate(R.id.action_feedFragment_to_listOfMentions)
@@ -97,7 +106,9 @@ class FeedFragment : Fragment() {
 
             override fun goToPageUser(post: PostResponse) {
                 val idAuthor = post.authorId.toString()
-                findNavController().navigate(R.id.userJobFragment,Bundle().apply { textArg = idAuthor })
+                findNavController().navigate(
+                    R.id.userJobFragment,
+                    Bundle().apply { textArg = idAuthor })
             }
         })
 
@@ -121,7 +132,7 @@ class FeedFragment : Fragment() {
                     .setAction(R.string.retry_loading) { viewModel.retry() }
                     .show()
             }
-            if (state.loading){
+            if (state.loading) {
                 Snackbar.make(binding.root, R.string.problem_loading, Snackbar.LENGTH_SHORT).show()
             }
         }

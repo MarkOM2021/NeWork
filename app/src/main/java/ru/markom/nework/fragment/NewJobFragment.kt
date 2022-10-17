@@ -23,7 +23,7 @@ import ru.markom.nework.R
 import ru.markom.nework.databinding.FragmentNewJobBinding
 import ru.markom.nework.dto.Job
 import ru.markom.nework.util.AndroidUtils
-import ru.markom.nework.util.GoDataTime
+import ru.markom.nework.util.DataConverter
 import ru.markom.nework.viewmodel.JobViewModel
 import java.util.*
 
@@ -60,8 +60,8 @@ class NewJobFragment: Fragment(), DatePickerDialog.OnDateSetListener {
         }
 
         viewModel.editedJob.observe(viewLifecycleOwner) {
-            val start = GoDataTime.convertDataTimeJob(it.start)
-            val end = it.finish?.let { it1 -> GoDataTime.convertDataTimeJob(it1) }
+            val start = DataConverter.convertDataTimeJob(it.start)
+            val end = it.finish?.let { it1 -> DataConverter.convertDataTimeJob(it1) }
             if (binding.name.text.toString() == ""){
                 it.name.let(binding.name::setText)
             }
@@ -153,7 +153,7 @@ class NewJobFragment: Fragment(), DatePickerDialog.OnDateSetListener {
         month = monthOf
         year = yearOf
         val date = listOf(day, month, year)
-        val dateTime = GoDataTime.convertDataInput(date)
+        val dateTime = DataConverter.convertDataInput(date)
         if (startEndFinished){
             viewModel.addDateStart(dateTime)
         } else {

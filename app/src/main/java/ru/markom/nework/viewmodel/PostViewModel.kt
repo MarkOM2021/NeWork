@@ -28,9 +28,9 @@ class PostViewModel @Inject constructor(
     appAuth: AppAuth
 ) : ViewModel() {
 
-    var lastAction: ActionType? = null
-    var lastId = 0
-    var errorCounter = 0
+    private var lastAction: ActionType? = null
+    private var lastId = 0
+    private var errorCounter = 0
     private val _dataState = MutableLiveData<FeedModelState>()
     val dataState: LiveData<FeedModelState>
         get() = _dataState
@@ -113,7 +113,7 @@ class PostViewModel @Inject constructor(
                 DISLIKE -> retryDisLikeById()
                 REMOVE -> retryRemove()
                 PARTICIPATE -> {}
-                REFUSEPARTICIPATION -> {}
+                REFUSE -> {}
                 null -> {}
             }
         }
@@ -131,23 +131,17 @@ class PostViewModel @Inject constructor(
     }
 
     private fun retryLikeById() {
-        lastId.let {
-            likeById(it)
-        }
+        likeById(lastId)
         errorCounter++
     }
 
     private fun retryDisLikeById() {
-        lastId.let {
-            disLikeById(it)
-        }
+        disLikeById(lastId)
         errorCounter++
     }
 
     private fun retryRemove() {
-        lastId.let {
-            removeById(it)
-        }
+        removeById(lastId)
         errorCounter++
     }
 }
@@ -158,5 +152,5 @@ enum class ActionType {
     DISLIKE,
     REMOVE,
     PARTICIPATE,
-    REFUSEPARTICIPATION
+    REFUSE
 }

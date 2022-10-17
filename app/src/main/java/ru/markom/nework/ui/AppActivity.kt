@@ -86,11 +86,11 @@ class AppActivity : AppCompatActivity() {
 
                 Glide.with(binding.navigationView)
                     .load(it.avatarUser)
-                    .error(R.drawable.ic_avatar_loading_error_48)
-                    .placeholder(R.drawable.ic_baseline_cruelty_free_48)
+                    .error(R.drawable.ic_no_avatar_48)
+                    .placeholder(R.drawable.ic_no_user_48)
                     .timeout(10_000)
                     .circleCrop()
-                    .into(binding.navigationView.getHeaderView(0).findViewById(R.id.avatarDr))
+                    .into(binding.navigationView.getHeaderView(0).findViewById(R.id.avatar))
             }
         }
 
@@ -142,7 +142,6 @@ class AppActivity : AppCompatActivity() {
         }
     }
 
-
     private fun checkGoogleApiAvailability() {
         with(googleApiAvailability) {
             val code = isGooglePlayServicesAvailable(this@AppActivity)
@@ -156,7 +155,6 @@ class AppActivity : AppCompatActivity() {
             Toast.makeText(this@AppActivity, R.string.google_play_unavailable, Toast.LENGTH_LONG)
                 .show()
         }
-
         firebaseMessaging.token.addOnSuccessListener {
             println(it)
         }

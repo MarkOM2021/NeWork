@@ -34,8 +34,8 @@ class UsersListViewHolder(
         binding.apply {
             Glide.with(binding.root)
                 .load(user.avatar)
-                .error(R.drawable.ic_avatar_loading_error_48)
-                .placeholder(R.drawable.ic_baseline_cruelty_free_48)
+                .error(R.drawable.ic_no_avatar_48)
+                .placeholder(R.drawable.ic_no_user_48)
                 .timeout(10_000)
                 .circleCrop()
                 .into(avatar)

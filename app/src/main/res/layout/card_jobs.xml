@@ -22,7 +22,8 @@
             android:layout_marginEnd="@dimen/common_spacing"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toStartOf="@id/nameOrganization"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="@string/image" />
 
 
         <TextView
@@ -51,27 +52,20 @@
             app:layout_constraintTop_toBottomOf="@id/image"
             tools:text="@sample/posts.json/data/position" />
 
+
         <TextView
             android:id="@+id/link"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/common_spacing"
             android:autoLink="web"
             android:lineSpacingMultiplier="1.5"
-            android:layout_marginStart="@dimen/common_spacing"
+            android:minHeight="@dimen/enlarged_spacing"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/position"
+            tools:ignore="TouchTargetSizeCheck"
             tools:text="@sample/posts.json/data/link" />
-
-        <TextView
-            android:id="@+id/jobPeriod"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/common_spacing"
-            android:text="@string/job_period"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/link" />
 
         <TextView
             android:id="@+id/jobPeriodFrom"
@@ -81,7 +75,7 @@
             android:text="@string/from"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/jobPeriod" />
+            app:layout_constraintTop_toBottomOf="@id/link" />
 
         <TextView
             android:id="@+id/start"
@@ -91,7 +85,7 @@
             android:layout_marginEnd="@dimen/common_spacing"
             android:layout_marginBottom="@dimen/common_spacing"
             app:layout_constraintStart_toEndOf="@id/jobPeriodFrom"
-            app:layout_constraintTop_toBottomOf="@id/jobPeriod"
+            app:layout_constraintTop_toBottomOf="@id/link"
             tools:text="@sample/posts.json/data/published" />
 
         <TextView
@@ -102,7 +96,7 @@
             android:text="@string/to"
             android:textStyle="bold"
             app:layout_constraintStart_toEndOf="@id/start"
-            app:layout_constraintTop_toBottomOf="@id/jobPeriod" />
+            app:layout_constraintTop_toBottomOf="@id/link" />
 
         <TextView
             android:id="@+id/finish"
@@ -112,7 +106,7 @@
             android:layout_marginEnd="@dimen/common_spacing"
             android:layout_marginBottom="@dimen/common_spacing"
             app:layout_constraintStart_toEndOf="@id/jobPeriodTo"
-            app:layout_constraintTop_toBottomOf="@id/jobPeriod"
+            app:layout_constraintTop_toBottomOf="@id/link"
             tools:text="@sample/posts.json/data/published" />
 
         <com.google.android.material.button.MaterialButton

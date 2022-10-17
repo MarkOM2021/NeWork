@@ -51,9 +51,7 @@ class MapFragment : Fragment() {
     private val objectTapListener = GeoObjectTapListener { geo ->
         val selectionMetadata: GeoObjectSelectionMetadata =
             geo.geoObject.metadataContainer.getItem(GeoObjectSelectionMetadata::class.java)
-
         binding?.map?.map?.selectGeoObject(selectionMetadata.id, selectionMetadata.layerId)
-
         true
     }
 
@@ -88,7 +86,7 @@ class MapFragment : Fragment() {
             if (newPostViewModel.inJob) {
                 mapObjects = binding?.map?.map?.mapObjects?.addPlacemark(
                     point,
-                    ImageProvider.fromResource(context, R.drawable.search_result)
+                    ImageProvider.fromResource(context, R.drawable.ic_baseline_location_on_24)
                 )
                 Snackbar.make(
                     binding?.root!!, R.string.addGeo,
@@ -101,7 +99,7 @@ class MapFragment : Fragment() {
             } else if (newEventViewModel.inJob) {
                 mapObjects = binding?.map?.map?.mapObjects?.addPlacemark(
                     point,
-                    ImageProvider.fromResource(context, R.drawable.search_result)
+                    ImageProvider.fromResource(context, R.drawable.ic_baseline_location_on_24)
                 )
                 Snackbar.make(
                     binding?.root!!, R.string.addGeo,
@@ -184,7 +182,7 @@ class MapFragment : Fragment() {
                 val point = Point(arguments?.pointArg?.latitude!!, arguments?.pointArg?.longitude!!)
                 binding.map.map?.mapObjects?.addPlacemark(
                     point,
-                    ImageProvider.fromResource(context, R.drawable.search_result)
+                    ImageProvider.fromResource(context, R.drawable.ic_baseline_location_on_24)
                 )
                 mapView?.map?.move(
                     CameraPosition(point, 14.0f, 0.0f, 0.0f),

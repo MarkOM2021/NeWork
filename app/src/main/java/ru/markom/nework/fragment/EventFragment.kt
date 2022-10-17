@@ -22,7 +22,7 @@ import ru.markom.nework.adapter.events.EventsAdapter
 import ru.markom.nework.adapter.posts.PagingLoadStateAdapter
 import ru.markom.nework.databinding.FragmentEventBinding
 import ru.markom.nework.dto.EventResponse
-import ru.markom.nework.fragment.DisplayingImagesFragment.Companion.textArg
+import ru.markom.nework.fragment.ImageFragment.Companion.textArg
 import ru.markom.nework.util.IntArg
 import ru.markom.nework.viewmodel.AuthViewModel
 import ru.markom.nework.viewmodel.EventViewModel

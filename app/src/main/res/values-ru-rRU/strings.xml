@@ -22,7 +22,7 @@
     <string name="channel_remote_name">Уведомления от сервера</string>
     <string name="channel_remote_description">Уведомления от удалённого сервера</string>
     <string name="server_problems">Что-то пошло не так. Нет связи с сервером</string>
-    <string name="repeat">ПОВТОРИТЬ?</string>
+    <string name="repeat">Повторить действие?</string>
     <string name="error_network">error_network</string>
     <string name="error_unknown">error_unknown</string>
     <string name="error_db">error_db</string>
@@ -33,10 +33,10 @@
     <string name="menu_save">Сохранить</string>
     <string name="action_sign_in">Войти в систему</string>
     <string name="All_fields">Все поля обязательны к заполнению</string>
-    <string name="To_continue">Для продолжения необходимо войти</string>
+    <string name="To_continue">Войдите чтобы продолжить</string>
     <string name="name_user">Имя пользователя</string>
     <string name="password_not_match">Неверный пароль</string>
-    <string name="post_content">текст %1$s</string>
+    <string name="post_content">Текст %1$s</string>
     <string name="notification_user_published_post">Пользователь %1$s опубликовал новый пост:</string>
     <string name="feed_of_posts">Посты</string>
     <string name="feed_of_jobs">Работа</string>
@@ -80,7 +80,7 @@
     <string name="leave_the_app">Вы уверены что хотите покинуть приложение?</string>
     <string name="yes">да</string>
     <string name="no">нет</string>
-    <string name="problem_loading">Проблемы с загрузкой данных с сервера, попробуйте в другой раз</string>
+    <string name="problem_loading">Проблемы с загрузкой данных с сервера. Попробуйте повторить позже</string>
     <string name="prompt_email">Логин</string>
     <string name="prompt_password">Пароль</string>
     <string name="action_sign_in_short">Войти</string>
@@ -88,5 +88,9 @@
     <string name="invalid_username">Недопустимое имя</string>
     <string name="invalid_password">Пароль должен содержать не менее 8 символов</string>
     <string name="login_failed">Нет ни одного зарегистрированного пользователя с таким логином</string>
-    <string name="repeat_password">Продублируйте пароль</string>
+    <string name="repeat_password">Повторите пароль</string>
+    <string name="save_changes">Сохранить изменения</string>
+    <string name="upscale">увеличить</string>
+    <string name="downscale">уменьшить</string>
+    <string name="get_location">уточнить местоположение</string>
 </resources>

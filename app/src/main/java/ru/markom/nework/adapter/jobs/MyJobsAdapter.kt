@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import ru.markom.nework.R
 import ru.markom.nework.databinding.CardJobsBinding
 import ru.markom.nework.dto.Job
-import ru.markom.nework.util.GoDataTime
+import ru.markom.nework.util.DataConverter
 
 
 interface OnClickListener {
@@ -41,8 +41,8 @@ class JobMyWallViewHolder(
         binding.apply {
             nameOrganization.text = job.name
             position.text = job.position
-            start.text = GoDataTime.convertDataTimeJob(job.start)
-            finish.text = job.finish?.let { GoDataTime.convertDataTimeJob(it) }
+            start.text = DataConverter.convertDataTimeJob(job.start)
+            finish.text = job.finish?.let { DataConverter.convertDataTimeJob(it) }
             link.text = job.link
             menu.setOnClickListener {
                 PopupMenu(it.context, it).apply {

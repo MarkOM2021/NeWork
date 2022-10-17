@@ -23,7 +23,7 @@
     <string name="channel_remote_name">Server notifications</string>
     <string name="channel_remote_description">Notifications from remote server</string>
     <string name="server_problems">Something went wrong. Server problems</string>
-    <string name="repeat">Repeat?</string>
+    <string name="repeat">Do you want to repeat?</string>
     <string name="error_network">error_network</string>
     <string name="error_unknown">error_unknown</string>
     <string name="error_db">error_db</string>
@@ -41,7 +41,7 @@
     <string name="invalid_password">Password must be at least 8 symbols</string>
     <string name="login_failed">No users with this login registred</string>
     <string name="All_fields">All fields must be filled</string>
-    <string name="To_continue">To continue you need to log in</string>
+    <string name="To_continue">Log in to continue</string>
     <string name="name_user">User name</string>
     <string name="repeat_password">Repeat password</string>
     <string name="password_not_match">Password is wrong</string>
@@ -81,7 +81,7 @@
     <string name="leave_the_app">Are you sure you want to leave the app?</string>
     <string name="yes">yes</string>
     <string name="no">no</string>
-    <string name="problem_loading">Problems downloading data from the server, try another time</string>
+    <string name="problem_loading">Data downloading from server failed. Try later</string>
     <string name="need_permission">Location permission required</string>
     <string name="which_mention">Which of the users should I mention?</string>
     <string name="list_of_mentioned">List of mentioned users</string>
@@ -89,4 +89,8 @@
     <string name="exit">exit</string>
     <string name="mention_anyone">User did not mention anyone</string>
     <string name="you_are_where">You are where you need to be</string>
+    <string name="save_changes">Save changes</string>
+    <string name="upscale">upscale</string>
+    <string name="downscale">downscale</string>
+    <string name="get_location">get location</string>
 </resources>

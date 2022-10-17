@@ -111,7 +111,7 @@
     </dialog>
     <fragment
         android:id="@+id/displayingImagesFragment2"
-        android:name="ru.markom.nework.fragment.DisplayingImagesFragment"
+        android:name="ru.markom.nework.fragment.ImageFragment"
         android:label="DisplayingImagesFragment"
         tools:layout="@layout/fragment_displaying_images"/>
     <dialog
@@ -123,12 +123,20 @@
         android:id="@+id/myPostFragment"
         android:name="ru.markom.nework.fragment.wall.MyPostFragment"
         android:label="fragment_my_wall_post"
-        tools:layout="@layout/fragment_my_wall_post" />
+        tools:layout="@layout/fragment_my_wall_post" >
+        <action
+            android:id="@+id/action_myPostFragment_to_userEditingFragment"
+            app:destination="@id/registrationFragment" />
+    </fragment>
     <fragment
         android:id="@+id/myJobFragment2"
         android:name="ru.markom.nework.fragment.wall.MyJobFragment"
         android:label="fragment_my_wall_job"
-        tools:layout="@layout/fragment_my_wall_job" />
+        tools:layout="@layout/fragment_my_wall_job" >
+        <action
+            android:id="@+id/action_myJobFragment2_to_userEditingFragment"
+            app:destination="@id/registrationFragment" />
+    </fragment>
     <fragment
         android:id="@+id/userJobFragment"
         android:name="ru.markom.nework.fragment.UserJobFragment"

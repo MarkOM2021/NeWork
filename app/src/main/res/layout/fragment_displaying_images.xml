@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/black"
+    android:background="@color/white"
     android:id="@+id/displayingImagesFragment">
 
     <ImageView
@@ -15,5 +15,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@sample/posts.json/data/authorAvatar"/>
+        tools:srcCompat="@sample/posts.json/data/authorAvatar"
+        android:contentDescription="@string/image" />
 </androidx.constraintlayout.widget.ConstraintLayout>

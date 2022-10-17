@@ -28,9 +28,9 @@ class EventViewModel @Inject constructor(
     appAuth: AppAuth
 ) : ViewModel() {
 
-    var lastAction: ActionType? = null
-    var lastId = 0
-    var errorCounter = 0
+    private var lastAction: ActionType? = null
+    private var lastId = 0
+    private var errorCounter = 0
     private val _dataState = MutableLiveData<FeedModelState>()
     val dataState: LiveData<FeedModelState>
         get() = _dataState
@@ -112,7 +112,7 @@ class EventViewModel @Inject constructor(
     }
 
     fun doNotParticipateInEvent(id: Int) {
-        lastAction = ActionType.REFUSEPARTICIPATION
+        lastAction = ActionType.REFUSE
         lastId = id
         viewModelScope.launch {
             try {
@@ -153,44 +153,34 @@ class EventViewModel @Inject constructor(
                 ActionType.DISLIKE -> retryDisLikeById()
                 ActionType.REMOVE -> retryRemove()
                 ActionType.PARTICIPATE -> retryParticipateInEvent()
-                ActionType.REFUSEPARTICIPATION -> retryDoNotParticipateInEvent()
+                ActionType.REFUSE -> retryDoNotParticipateInEvent()
                 null -> {}
             }
         }
     }
 
-    fun retryLikeById() {
-        lastId.let {
-            likeById(it)
-        }
+    private fun retryLikeById() {
+        likeById(lastId)
         errorCounter++
     }
 
-    fun retryDisLikeById() {
-        lastId.let {
-            disLikeById(it)
-        }
+    private fun retryDisLikeById() {
+        disLikeById(lastId)
         errorCounter++
     }
 
-    fun retryRemove() {
-        lastId.let {
-            removeById(it)
-        }
+    private fun retryRemove() {
+        removeById(lastId)
         errorCounter++
     }
 
-    fun retryParticipateInEvent() {
-        lastId.let {
-            participateInEvent(it)
-        }
+    private fun retryParticipateInEvent() {
+        participateInEvent(lastId)
         errorCounter++
     }
 
-    fun retryDoNotParticipateInEvent() {
-        lastId.let {
-            doNotParticipateInEvent(it)
-        }
+    private fun retryDoNotParticipateInEvent() {
+        doNotParticipateInEvent(lastId)
         errorCounter++
     }
 }

@@ -19,10 +19,10 @@ import ru.markom.nework.R
 import ru.markom.nework.databinding.FragmentOpenEventBinding
 import ru.markom.nework.enumeration.AttachmentType
 import ru.markom.nework.enumeration.EventType
-import ru.markom.nework.fragment.DisplayingImagesFragment.Companion.textArg
+import ru.markom.nework.fragment.ImageFragment.Companion.textArg
 import ru.markom.nework.fragment.EventFragment.Companion.intArg
 import ru.markom.nework.fragment.MapFragment.Companion.pointArg
-import ru.markom.nework.util.GoDataTime
+import ru.markom.nework.util.DataConverter
 import ru.markom.nework.viewmodel.AuthViewModel
 import ru.markom.nework.viewmodel.EventViewModel
 
@@ -67,8 +67,8 @@ class EventPreviewFragment : Fragment() {
 
                     Glide.with(this@EventPreviewFragment)
                         .load(event.authorAvatar)
-                        .error(R.drawable.ic_avatar_loading_error_48)
-                        .placeholder(R.drawable.ic_baseline_cruelty_free_48)
+                        .error(R.drawable.ic_no_avatar_48)
+                        .placeholder(R.drawable.ic_no_user_48)
                         .timeout(10_000)
                         .circleCrop()
                         .into(avatar)
@@ -90,12 +90,12 @@ class EventPreviewFragment : Fragment() {
                     }
 
                     when (event.type) {
-                        EventType.OFFLINE -> type.setImageResource(R.drawable.ic_sensors_off_32)
-                        EventType.ONLINE -> type.setImageResource(R.drawable.ic_sensors_on_32)
+                        EventType.OFFLINE -> type.setImageResource(R.drawable.ic_offline_32)
+                        EventType.ONLINE -> type.setImageResource(R.drawable.ic_online_32)
                     }
                     author.text = event.author
-                    published.text = GoDataTime.convertDataTime(event.published)
-                    dateTime.text = GoDataTime.convertDataTime(event.datetime)
+                    published.text = DataConverter.convertDataTime(event.published)
+                    dateTime.text = DataConverter.convertDataTime(event.datetime)
                     content.text = event.content + if (event.link != null) {
                         "\n" + event.link
                     } else {

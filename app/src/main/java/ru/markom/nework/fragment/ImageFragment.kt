@@ -10,7 +10,7 @@ import ru.markom.nework.R
 import ru.markom.nework.databinding.FragmentDisplayingImagesBinding
 import ru.markom.nework.util.StringArg
 
-class DisplayingImagesFragment: Fragment() {
+class ImageFragment: Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -25,8 +25,7 @@ class DisplayingImagesFragment: Fragment() {
         val url = arguments?.textArg
         Glide.with(this)
             .load(url)
-            .error(R.drawable.ic_avatar_loading_error_48)
-            .placeholder(R.drawable.ic_baseline_cruelty_free_48)
+            .error(R.drawable.ic_no_image_24)
             .timeout(10_000)
             .into(binding.imageView)
 

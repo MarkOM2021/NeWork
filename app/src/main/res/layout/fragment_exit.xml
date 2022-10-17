@@ -28,7 +28,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/yes"
-        android:paddingTop="@dimen/fragment_vertical_margin"
         app:layout_constraintStart_toStartOf="@id/textView"
         app:layout_constraintEnd_toStartOf="@id/button2"
         app:layout_constraintTop_toBottomOf="@id/textView" />
@@ -38,7 +37,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/no"
-        android:paddingTop="@dimen/fragment_vertical_margin"
         app:layout_constraintStart_toEndOf="@id/button"
         app:layout_constraintEnd_toEndOf="@id/textView"
         app:layout_constraintTop_toBottomOf="@id/textView" />

@@ -19,10 +19,10 @@ import kotlinx.coroutines.ExperimentalCoroutinesApi
 import ru.markom.nework.R
 import ru.markom.nework.databinding.FragmentOpenPostBinding
 import ru.markom.nework.enumeration.AttachmentType
-import ru.markom.nework.fragment.DisplayingImagesFragment.Companion.textArg
+import ru.markom.nework.fragment.ImageFragment.Companion.textArg
 import ru.markom.nework.fragment.FeedFragment.Companion.intArg
 import ru.markom.nework.fragment.MapFragment.Companion.pointArg
-import ru.markom.nework.util.GoDataTime
+import ru.markom.nework.util.DataConverter
 import ru.markom.nework.viewmodel.AuthViewModel
 import ru.markom.nework.viewmodel.PostViewModel
 
@@ -70,8 +70,7 @@ class PostPreviewFragment : Fragment() {
 
                     Glide.with(this@PostPreviewFragment)
                         .load(post.authorAvatar)
-                        .error(R.drawable.ic_avatar_loading_error_48)
-                        .placeholder(R.drawable.ic_baseline_cruelty_free_48)
+                        .error(R.drawable.ic_no_avatar_48)
                         .timeout(10_000)
                         .circleCrop()
                         .into(avatar)
@@ -96,7 +95,7 @@ class PostPreviewFragment : Fragment() {
                             .timeout(10_000).into(videoField)
                     }
                     author.text = post.author
-                    published.text = GoDataTime.convertDataTime(post.published)
+                    published.text = DataConverter.convertDataTime(post.published)
                     content.text = post.content + if (post.link != null) {
                         "\n" + post.link
                     } else {

@@ -28,7 +28,7 @@ import ru.markom.nework.R
 import ru.markom.nework.adapter.AdapterUsersIdCallback
 import ru.markom.nework.adapter.ListUsersIdAdapter
 import ru.markom.nework.databinding.FragmentNewPostBinding
-import ru.markom.nework.fragment.DisplayingImagesFragment.Companion.textArg
+import ru.markom.nework.fragment.ImageFragment.Companion.textArg
 import ru.markom.nework.fragment.FeedFragment.Companion.intArg
 import ru.markom.nework.fragment.MapFragment.Companion.pointArg
 import ru.markom.nework.viewmodel.NewPostViewModel
@@ -49,28 +49,29 @@ class NewPostFragment : Fragment() {
             false
         )
 
-        val newPostViewModel : NewPostViewModel by activityViewModels()
+        val newPostViewModel: NewPostViewModel by activityViewModels()
         var file: MultipartBody.Part
 
         requireActivity().onBackPressedDispatcher.addCallback(this) {
-                Snackbar.make(binding.root, R.string.be_lost, Snackbar.LENGTH_SHORT).setAction(R.string.exit) {
+            Snackbar.make(binding.root, R.string.be_lost, Snackbar.LENGTH_SHORT)
+                .setAction(R.string.exit) {
                     newPostViewModel.deleteEditPost()
                     findNavController().navigate(R.id.feedFragment)
                 }.show()
-            }
+        }
 
         if (arguments?.intArg != null) {
             val id = arguments?.intArg
-            id?.let {newPostViewModel.getPost(it) }
+            id?.let { newPostViewModel.getPost(it) }
         }
-
-
 
 
         val adapter = ListUsersIdAdapter(object : AdapterUsersIdCallback {
             override fun goToPageUser(id: Int) {
                 val idAuthor = id.toString()
-                findNavController().navigate(R.id.userJobFragment,Bundle().apply { textArg = idAuthor })
+                findNavController().navigate(
+                    R.id.userJobFragment,
+                    Bundle().apply { textArg = idAuthor })
             }
         })
 
@@ -88,7 +89,8 @@ class NewPostFragment : Fragment() {
                         val uri: Uri? = it.data?.data
                         val resultFile = uri?.toFile()
                         file = MultipartBody.Part.createFormData(
-                            "file", resultFile?.name, resultFile!!.asRequestBody())
+                            "file", resultFile?.name, resultFile!!.asRequestBody()
+                        )
                         newPostViewModel.addPictureToThePost(file)
                         binding.image.setImageURI(uri)
                     }
@@ -113,15 +115,18 @@ class NewPostFragment : Fragment() {
         }
 
         binding.mentionAdd.setOnClickListener {
-            binding.mentionAdd.isChecked = newPostViewModel.newPost.value?.mentionIds?.isNotEmpty() ?: false
+            binding.mentionAdd.isChecked =
+                newPostViewModel.newPost.value?.mentionIds?.isNotEmpty() ?: false
             findNavController().navigate(R.id.action_newPostFragment_to_listOfUsers)
         }
 
         binding.geoAdd.setOnClickListener {
             if (newPostViewModel.newPost.value?.coords != null) {
                 binding.geoAdd.isChecked = true
-                val point = Point(newPostViewModel.newPost.value?.coords!!.lat.toDouble(),
-                    newPostViewModel.newPost.value?.coords!!.long.toDouble() )
+                val point = Point(
+                    newPostViewModel.newPost.value?.coords!!.lat.toDouble(),
+                    newPostViewModel.newPost.value?.coords!!.long.toDouble()
+                )
                 newPostViewModel.inJob = true
                 findNavController().navigate(R.id.action_newPostFragment_to_mapsFragment,
                     Bundle().apply { pointArg = point })
@@ -158,8 +163,8 @@ class NewPostFragment : Fragment() {
                 binding.image.visibility = View.VISIBLE
                 Glide.with(this)
                     .load(it.attachment.url)
-                    .error(R.drawable.ic_avatar_loading_error_48)
-                    .placeholder(R.drawable.ic_baseline_cruelty_free_48)
+                    .error(R.drawable.ic_no_image_24)
+                    .placeholder(R.drawable.ic_no_user_48)
                     .timeout(10_000)
                     .into(binding.image)
                 binding.menuAdd.isChecked = true
@@ -176,7 +181,7 @@ class NewPostFragment : Fragment() {
 
         binding.ok.setOnClickListener {
             val content = binding.edit.text.toString()
-            if (content =="") {
+            if (content == "") {
                 Snackbar.make(binding.root, R.string.content_field, Snackbar.LENGTH_SHORT).show()
             } else {
                 newPostViewModel.addPost(content)
@@ -193,9 +198,6 @@ class NewPostFragment : Fragment() {
                 Snackbar.make(binding.root, R.string.error_loading, Snackbar.LENGTH_SHORT).show()
             }
         }
-
-
-
         return binding.root
     }
 }

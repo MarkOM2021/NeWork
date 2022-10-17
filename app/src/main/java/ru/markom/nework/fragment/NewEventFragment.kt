@@ -31,10 +31,10 @@ import ru.markom.nework.adapter.AdapterUsersIdCallback
 import ru.markom.nework.adapter.ListUsersIdEventAdapter
 import ru.markom.nework.databinding.FragmentNewEventBinding
 import ru.markom.nework.enumeration.EventType
-import ru.markom.nework.fragment.DisplayingImagesFragment.Companion.textArg
+import ru.markom.nework.fragment.ImageFragment.Companion.textArg
 import ru.markom.nework.fragment.FeedFragment.Companion.intArg
 import ru.markom.nework.fragment.MapFragment.Companion.pointArg
-import ru.markom.nework.util.GoDataTime
+import ru.markom.nework.util.DataConverter
 import ru.markom.nework.viewmodel.NewEventViewModel
 import java.util.*
 import android.app.TimePickerDialog as TimePickerDialog
@@ -175,8 +175,8 @@ class NewEventFragment : Fragment(), DatePickerDialog.OnDateSetListener, TimePic
                 binding.image.visibility = View.VISIBLE
                 Glide.with(this)
                     .load(it.attachment.url)
-                    .error(R.drawable.ic_avatar_loading_error_48)
-                    .placeholder(R.drawable.ic_baseline_cruelty_free_48)
+                    .error(R.drawable.ic_no_image_24)
+                    .placeholder(R.drawable.ic_no_user_48)
                     .timeout(10_000)
                     .into(binding.image)
                 binding.menuAdd.isChecked = true
@@ -252,7 +252,7 @@ class NewEventFragment : Fragment(), DatePickerDialog.OnDateSetListener, TimePic
         hourEvent = hourOfDay
         minuteEvent = minute
         val date = listOf(dayEvent, monthEvent, yearEvent, hourEvent, minuteEvent)
-        val dateTime = GoDataTime.convertDateToLocalDate(date)
+        val dateTime = DataConverter.convertDateToLocalDate(date)
         newEventViewModel.addDateTime(dateTime)
     }
 }

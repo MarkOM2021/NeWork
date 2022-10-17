@@ -16,7 +16,7 @@ import ru.markom.nework.R
 import ru.markom.nework.adapter.AdapterUsersIdCallback
 import ru.markom.nework.adapter.UsersListAdapter
 import ru.markom.nework.databinding.FaragmenListOfUsersBinding
-import ru.markom.nework.fragment.DisplayingImagesFragment.Companion.textArg
+import ru.markom.nework.fragment.ImageFragment.Companion.textArg
 import ru.markom.nework.viewmodel.PostViewModel
 
 @ExperimentalCoroutinesApi
