@@ -48,13 +48,11 @@ class AuthenticationFragment : DialogFragment() {
 
             }
         }
-        viewModel.data.observeForever {
+        viewModel.data.observe(viewLifecycleOwner) {
             if (it.token != null) {
                 findNavController().navigateUp()
             }
         }
-
         return binding.root
-
     }
 }
